@@ -1,6 +1,7 @@
 import docx, json
 
-def riskAssessment(doc, docName, directory, event):
+
+def risk_assessment(doc, docName, directory, event):
     """Build the risk assessment for the camp"""
     print("Generating risk assessment...")
     # add heading

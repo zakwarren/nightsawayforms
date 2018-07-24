@@ -1,7 +1,8 @@
 import os, platform, argparse
-import campDeets, configuration, defaults, equipment, header, kitList, menu, programme, riskAssessment
+import campDeets, configuration, defaults, equipment, header, kitlist, menu, programme, riskassessment
 
-def setUp():
+
+def set_up():
     """Check local environment and set up as necessary"""
     try:
         # check if config directory exists and, if not, create it
@@ -16,17 +17,17 @@ def setUp():
     # check if data files are present and, if not, write defaults
     try:
         if not os.path.isfile('config/equipment.json'):
-            defaults.defaultEquip()
+            defaults.default_equip()
         if not os.path.isfile('config/kitList.json'):
-            defaults.defaultKit()
+            defaults.default_kit()
         if not os.path.isfile('config/risks.json'):
-            defaults.defaultRisk()
+            defaults.default_risk()
     
     except:
         print("Failed to search config directory")
 
 
-def campDirectory():
+def camp_directory():
     """Check directory for camp forms and create as necessary"""
     directory = input("What directory do you want to save the camp paperwork in? (Leave blank for this directory) ")
     try:
@@ -48,10 +49,10 @@ def campDirectory():
         print("Failed to create directory:", directory)
 
 
-def blankDoc(directory, myGroup, event):
+def blank_doc(directory, myGroup, event):
     """Produces a blank document using the standard header for the camp"""
     print("Generating blank document...")
-    doc, docName = header.wordHeading(myGroup, event)
+    doc, docName = header.word_heading(myGroup, event)
     
     # save document
     try:
@@ -65,43 +66,43 @@ def blankDoc(directory, myGroup, event):
 def ops(config):
     """Runs the primary operations"""
     # check local set up
-    setUp()
+    set_up()
 
     # get required data
     if config == "ignore":
-        myGroup = campDeets.getGroup()
+        myGroup = campDeets.get_group()
     else:
-        myGroup = configuration.configReader()
-    event = campDeets.getCamp()
-    leader = campDeets.getLeader()
+        myGroup = configuration.config_reader()
+    event = campDeets.get_camp()
+    leader = campDeets.get_leader()
     print("")
-    directory = campDirectory()
+    directory = camp_directory()
     print("")
 
     # write programme
-    doc, docName = header.wordHeading(myGroup, event)
+    doc, docName = header.word_heading(myGroup, event)
     programme.programme(doc, docName, directory, event)
     print("")
 
     # write kit list
-    doc, docName = header.wordHeading(myGroup, event)
-    kitList.kitList(doc, docName, directory, event)
+    doc, docName = header.word_heading(myGroup, event)
+    kitlist.kit_list(doc, docName, directory, event)
     print("")
 
     # write group equipment list
-    wb, ws, bookName = header.excelHeading(myGroup, event)
+    wb, ws, bookName = header.excel_heading(myGroup, event)
     equipment.equipment(wb, ws, bookName, directory, leader, myGroup, event)
     print("")
 
     # write menu, if applicable
     if event.catering:
-        doc, docName = header.wordHeading(myGroup, event)
+        doc, docName = header.word_heading(myGroup, event)
         menu.menu(doc, docName, directory, event)
         print("")
     
     # write risk assessment
-    doc, docName = header.wordHeading(myGroup, event)
-    riskAssessment.riskAssessment(doc, docName, directory, event)
+    doc, docName = header.word_heading(myGroup, event)
+    riskassessment.risk_assessment(doc, docName, directory, event)
     print("")
 
     print("-" * 40)
@@ -109,7 +110,6 @@ def ops(config):
     print("Don't forget to collect health and emergency contact details!")
     print("-" * 40, end="\n\n")
     print("Have a good camp!")
-
 
 
 def main():
@@ -131,8 +131,8 @@ def main():
 
     # set up a new Scout Group configuration
     if args.config:
-        myGroup = campDeets.getGroup()
-        configuration.configWriter(myGroup)
+        myGroup = campDeets.get_group()
+        configuration.config_writer(myGroup)
     
     # ignore any existing Scout Group configurations
     elif args.ignore:
@@ -140,21 +140,21 @@ def main():
     
     # restore default settings files
     elif args.default:
-        defaults.restoreDefaults()
+        defaults.restore_defaults()
     
     # generate a blank document with a camp header
     elif args.blank:
         # get required data
         if args.ignore:
-            myGroup = campDeets.getGroup()
+            myGroup = campDeets.get_group()
         else:
-            myGroup = configuration.configReader()
-        event = campDeets.getCamp()
+            myGroup = configuration.config_reader()
+        event = campDeets.get_camp()
         print("")
-        directory = campDirectory()
+        directory = camp_directory()
         print("")
         # produce blank document
-        blankDoc(directory, myGroup, event)
+        blank_doc(directory, myGroup, event)
     
     # run normal nights away form generator
     else:

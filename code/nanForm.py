@@ -1,8 +1,8 @@
 import docx
+import campdeets, configuration, nightsawayforms
 
-import campDeets, configuration, nightsAwayForms
 
-def nanForm(directory, leader, myGroup, event):
+def nan_form(directory, leader, myGroup, event):
     """Build the Nights Away Notification (NAN) form for the camp"""
     # create new document object
     doc = docx.Document()
@@ -104,8 +104,8 @@ def nanForm(directory, leader, myGroup, event):
 
 
 if __name__ == '__main__':
-    event = campDeets.campDeets("summer camp", "The Hardwick Estate, Pangbourne", "11-08-2018", "18-08-2018", True, True, True)
-    myGroup = configuration.configReader()
-    leader = campDeets.campLeader("Ace Broderick", "ASL", "123456", "0123456789", "ace@broderick.com")
-    directory = nightsAwayForms.campDirectory()
-    nanForm(directory, leader, myGroup, event)
+    event = campdeets.campdeets("summer camp", "The Hardwick Estate, Pangbourne", "11-08-2018", "18-08-2018", True, True, True)
+    myGroup = configuration.config_reader()
+    leader = campdeets.campLeader("Ace Broderick", "ASL", "123456", "0123456789", "ace@broderick.com")
+    directory = nightsawayforms.camp_directory()
+    nan_form(directory, leader, myGroup, event)

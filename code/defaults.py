@@ -1,6 +1,6 @@
 import os
 
-def restoreDefaults():
+def restore_defaults():
     """Restore default setting files"""
     try:
         # check if config directory exists and, if not, create it
@@ -13,12 +13,12 @@ def restoreDefaults():
         quit()
     
     # write new default settings files
-    defaultEquip()
-    defaultKit()
-    defaultRisk()
+    default_equip()
+    default_kit()
+    default_risk()
 
 
-def defaultEquip():
+def default_equip():
     """Write default equipment to disk"""
     equip = """{
     "equipment": {
@@ -153,7 +153,7 @@ def defaultEquip():
         print("Failed to write default equipment data to config directory")
 
 
-def defaultKit():
+def default_kit():
     """Write default kit to list"""
     kit = """{
     "kit": {
@@ -222,7 +222,7 @@ def defaultKit():
         print("Failed to write default kit data to config directory")
 
 
-def defaultRisk():
+def default_risk():
     """Write default risk assessment to disk"""
     risk = r"""{
     "risks": {

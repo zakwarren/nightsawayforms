@@ -13,9 +13,9 @@ class campDeets:
 
         # apply date functions to get extra data
         self.campYear = str(self.startDate.year)
-        self.dateRange = self.dateWorder()
-        self.nightsAway = self.dateDiff()
-        self.daysCamping = self.daysOnCamp()
+        self.dateRange = self.date_worder()
+        self.nightsAway = self.date_diff()
+        self.daysCamping = self.days_on_camp()
 
         # key activities
         self.catering = catering
@@ -27,12 +27,12 @@ class campDeets:
         return self.camp + " at " + self.location + " from " + self.dateRange
 
 
-    def dateDiff(self):
+    def date_diff(self):
         """Calculate the number of night's away from the start and end date"""
         return abs((self.endDate - self.startDate).days)
 
 
-    def daySuffix(self, day):
+    def day_suffix(self, day):
         """Work out day suffix"""
         if 4 <= day <= 20 or 24 <= day <= 30:
             suffix = "th"
@@ -41,7 +41,7 @@ class campDeets:
         return suffix
 
 
-    def dateWorder(self):
+    def date_worder(self):
         """Build natural language date range"""
         # extract date parts
         startDay = self.startDate.day
@@ -50,14 +50,14 @@ class campDeets:
         endYear = self.endDate.year
 
         # work out day suffix
-        startSuffix = self.daySuffix(startDay)
-        endSuffix = self.daySuffix(endDay)
+        startSuffix = self.day_suffix(startDay)
+        endSuffix = self.day_suffix(endDay)
 
         dateRange = str(startDay) + startSuffix + " to " + str(endDay) + endSuffix + ' ' + endMonth + ' ' + str(endYear)
         return dateRange
 
 
-    def daysOnCamp(self):
+    def days_on_camp(self):
         """Get a list of all the days on camp"""
         date = self.startDate
         campDays = []
@@ -116,7 +116,7 @@ class groupDeets():
             + "\nSection: " + self.section + "\n"
 
 
-def getCamp():
+def get_camp():
     """Capture camp details from the user"""
     print("Please provide your camp details", end="\n\n")
 
@@ -151,7 +151,7 @@ def getCamp():
     return event
 
 
-def getLeader():
+def get_leader():
     """Capture camp leader details from the user"""
     print("Please provide your camp leader details", end="\n\n")
 
@@ -170,7 +170,7 @@ def getLeader():
     return leader
 
 
-def getGroup():
+def get_group():
     """Capture group details from the user"""
     print("Please provide your group details", end="\n\n")
 

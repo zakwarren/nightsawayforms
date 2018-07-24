@@ -1,7 +1,8 @@
 import json, os
-import campDeets
+import campdeets
 
-def configReader():
+
+def config_reader():
     """Reads a pre-defined config file and passes its data to the main programme"""
     # check if config file exists
     if os.path.isfile('config/config.json'):
@@ -20,7 +21,7 @@ def configReader():
             district = config['district']
             section = config['section']
 
-            myGroup = campDeets.groupDeets(group, logo, established, charity, rnNumber, district, section)
+            myGroup = campdeets.groupDeets(group, logo, established, charity, rnNumber, district, section)
             return myGroup
         
         except:
@@ -33,18 +34,18 @@ def configReader():
 
     # if user wants to write new config
     if new == 'y':
-        myGroup = campDeets.getGroup()
-        configWriter(myGroup)
+        myGroup = campdeets.get_group()
+        config_writer(myGroup)
     elif new != 'y':
         temp = input("Would you like to enter Scout Group details, but not store them (y/n)? ")
         if temp == 'y':
-            myGroup = campDeets.getGroup()
+            myGroup = campdeets.get_group()
             return myGroup
         else:
             quit()
 
 
-def configWriter(myGroup):
+def config_writer(myGroup):
     """Writes a config file with group data to ease use for subsequent camps"""
     print("Setting up a new configuration...")
     config = {}

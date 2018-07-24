@@ -1,5 +1,6 @@
 import openpyxl, datetime, json
 
+
 def equipment(wb, ws, bookName, directory, leader, myGroup, event):
     """Build the equipment request form for the camp"""
     print("Generating equipment request form...")

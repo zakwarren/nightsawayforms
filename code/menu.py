@@ -1,5 +1,6 @@
 import docx
 
+
 def menu(doc, docName, directory, event):
     """Build the menu for the camp"""
     print("Generating menu...")

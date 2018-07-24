@@ -1,6 +1,7 @@
 import docx, openpyxl, PIL
 from PIL import Image
 
+
 def resize_logo(logo):
     """resize the logo to the required size while maintaining aspect ratio"""
     img = PIL.Image.open(logo)
@@ -44,7 +45,7 @@ def add_hyperlink(paragraph, text, url):
     return hyperlink
 
 
-def wordHeading(myGroup, event):
+def word_heading(myGroup, event):
     """Initialise a document and apply the header"""
     # create document object 
     doc = docx.Document()
@@ -77,7 +78,7 @@ def wordHeading(myGroup, event):
     docName = ' - ' + event.camp + ' ' + event.campYear + '.docx'
     return doc, docName
 
-def excelHeading(myGroup, event):
+def excel_heading(myGroup, event):
     """Intialise a workbook and apply the header"""
     # create spreadsheet object and capture worksheet
     wb = openpyxl.Workbook()

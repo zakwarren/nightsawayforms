@@ -1,7 +1,8 @@
 import docx, json
 import header
 
-def kitList(doc, docName, directory, event):
+
+def kit_list(doc, docName, directory, event):
     """Build the kit list for the camp"""
     print("Generating kit list...")
     # add heading and blurb paragraph

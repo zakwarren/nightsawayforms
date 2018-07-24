@@ -1,5 +1,6 @@
 import docx
 
+
 def programme(doc, docName, directory, event):
     """Build the programme for the camp"""
     print("Generating programme...")

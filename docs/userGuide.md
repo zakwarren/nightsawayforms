@@ -5,18 +5,18 @@ was designed and developed by Scout Leaders for Scout Leaders (and
 all other leaders in Scouting) who want a quick and easy way to 
 manage all the paperwork that comes with running a nights away event. 
 
-The Nights Away Forms Generator (or just nightsAwayForms) takes all 
+The Nights Away Forms Generator (or just nightsawayforms) takes all 
 the boring, repetitive tasks and automates them for you. It asks a set 
 of simple questions and uses your answers to fill in the details. 
 
 Some leaders like to use this app after they've had their planning 
 meetings with their leader team and have all the answers. Others like 
 to use it as a prompt during those meetings. Whichever works for you, 
-use nightsAwayForms to take the pain away and let you focus on the fun. 
+use nightsawayforms to take the pain away and let you focus on the fun. 
 
 ##Getting started
 
-Run nightsAwayForms to begin. This will open a clear terminal window 
+Run nightsawayforms to begin. This will open a clear terminal window 
 and run a few checks on its local environment. It will then ask you a 
 series of questions about your group and your camp. This is used to 
 generate the relevant paperwork. 
@@ -39,7 +39,7 @@ this, which is much easier than paper forms!
 
 ###First run
 
-The first time it runs, nightsAwayForms will write default settings to 
+The first time it runs, nightsawayforms will write default settings to 
 the config directory. These are: 
 * equipment.json for group equipment
 * kitList.json for personal kit lists
@@ -47,7 +47,7 @@ the config directory. These are:
 
 It will then ask you a number of questions about your Scout Group and 
 section. Your answers will be stored in the config directory, in 
-config.json. This is used each time nightsAwayForms is run to customize 
+config.json. This is used each time nightsawayforms is run to customize 
 the headers of your camp documents. 
 
 A resized logo will also be stored in the config directory for use by 
@@ -55,7 +55,7 @@ headers.
 
 ###Camp-specific questions
 
-Every time nightsAwayForms runs, it will ask you a series of 
+Every time nightsawayforms runs, it will ask you a series of 
 camp-specific questions. These cover the name of the camp, where it 
 is, the dates of the camp, and the leader in charge's details. It also 
 asks about some key activities. 
@@ -68,10 +68,10 @@ the kit list and risk assessment.
 
 Finally, this section asks what directory you'd like to save this 
 camp's forms in. Typing "Summer camp" will place the forms in a folder 
-called "Summer camp" within the same directory as nightsAwayForms. 
+called "Summer camp" within the same directory as nightsawayforms. 
 Typing "C:\Users\PoignantWizard\Desktop\Summer camp" will place the 
 forms in a folder called "Summer camp" on the desktop. If the folder 
-doesn't exist, nightsAwayForms will attempt to create it first. 
+doesn't exist, nightsawayforms will attempt to create it first. 
 
 ###Programme
 
@@ -79,11 +79,11 @@ The programme uses the dates provided to pre-populate the days of the
 week to a table. It then asks for the details of the programme. 
 
 For example: 
-1. nightsAwayForms asks: "How many activities will there be on Saturday?"
+1. nightsawayforms asks: "How many activities will there be on Saturday?"
 2. you answer: "2"
-3. nightsAwayForms prompts: "Saturday's activity 1:" 
+3. nightsawayforms prompts: "Saturday's activity 1:" 
 4. You respond: "Kayaking"
-5. nightsAwayForms prompts: "Saturday's activity 2:" 
+5. nightsawayforms prompts: "Saturday's activity 2:" 
 6. You respond: "Cooking on fires"
 
 These responses are pushed into a table and written out into a 
@@ -91,17 +91,21 @@ document, saved in the specified directory.
 
 ###Menu
 
+The menu is only generated if say "y" when nightsawayforms asks if 
+you will be providing catering. Otherwise it assumes you are relying 
+on an alternate provision, such as if the site provides meals. 
+
 The menu uses the dates provided to pre-populate the days of the 
 week to a table. It then asks for the details of the menu. 
 
 For example: 
-1. nightsAwayForms asks: "How many meals will there be on Saturday?"
+1. nightsawayforms asks: "How many meals will there be on Saturday?"
 2. you answer: "3"
-3. nightsAwayForms prompts: "Saturday's meal 1:" 
+3. nightsawayforms prompts: "Saturday's meal 1:" 
 4. You respond: "Bacon sandwiches"
-5. nightsAwayForms prompts: "Saturday's meal 2:" 
+5. nightsawayforms prompts: "Saturday's meal 2:" 
 6. You respond: "Bacon sandwiches"
-7. nightsAwayForms prompts: "Saturday's meal 3:"
+7. nightsawayforms prompts: "Saturday's meal 3:"
 8. You respond: "Bacon and eggs" 
 
 These responses are pushed into a table and written out into a 
@@ -111,18 +115,18 @@ document, saved in the specified directory.
 
 The kit list uses a JSON file to provide it with all the possible 
 options that could be included. These are grouped into several 
-categories. The kit list function of nightsAwayForms reads these 
+categories. The kit list function of nightsawayforms reads these 
 categories, asks if you want to include them, and takes action 
 based on your response. 
 
 Some categories are automatically added based on the data collected 
-when nightsAwayForms first starts. For example, if you say "y" when 
+when nightsawayforms first starts. For example, if you say "y" when 
 it asks whether there will be water activities, the kit list will 
 add the "water activities" category to the kit list document. This 
 includes information for young people on what to wear afloat for 
 activities like sailing. 
 
-nightsAwayForms comes with a default kit list JSON file, which it 
+nightsawayforms comes with a default kit list JSON file, which it 
 deploys on startup if the file doesn't already exist. This can be 
 edited with your own categories and kit list. Details on this can 
 be found under the advanced usage section. 
@@ -131,12 +135,12 @@ be found under the advanced usage section.
 
 The risk assessment uses a JSON file to provide it with all the 
 possible options that could be included. These are grouped into 
-several categories. The risk assessment function of nightsAwayForms 
+several categories. The risk assessment function of nightsawayforms 
 reads these categories, asks if you want to include them, and 
 takes action based on your response. 
 
 Some categories are automatically added based on the data collected 
-when nightsAwayForms first starts. For example, if you say "y" when 
+when nightsawayforms first starts. For example, if you say "y" when 
 it asks whether you will be using sharps, the risk assessment will 
 add the "sharps" category to the risk assessment document. This 
 includes mitigations and contingencies based on using knives, axes 
@@ -150,7 +154,7 @@ prescription medication" risk has a [XXX] for the nearest hospital.
 This gives you the opportunity to find out the details of the 
 nearest hospital to your camp and add it in. 
 
-nightsAwayForms comes with a default risk assessment JSON file, 
+nightsawayforms comes with a default risk assessment JSON file, 
 which it deploys on startup if the file doesn't already exist. 
 This can be edited with your own categories and risk assessments. 
 Details on this, and adding your own dynamic fields, can be found 
@@ -166,26 +170,26 @@ reference if your group operates differently.
 
 The equipment list uses a JSON file to provide it with all the 
 possible options that could be included. These are grouped into 
-several categories. The equipment function of nightsAwayForms reads 
+several categories. The equipment function of nightsawayforms reads 
 these categories, asks if you want to include them, then goes through 
 a list of items and asks if you want to take each one. If so, it will 
 ask how many. Finally, it will add this information to the spreadsheet. 
 
 Some categories are automatically assumed to be included based on the 
-data collected when nightsAwayForms first starts. For example, if you 
+data collected when nightsawayforms first starts. For example, if you 
 say "y" when it asks whether you will be catering (instead of using a 
 site's provision), the equipment list will move directly to the 
 catering category, asking you what equipment you wish to take and how 
 much of each. 
 
-nightsAwayForms comes with a default equipment JSON file, which it 
+nightsawayforms comes with a default equipment JSON file, which it 
 deploys on startup if the file doesn't already exist. This can be 
 edited with your own categories and equipment. Details on this, and 
 can be found under the advanced usage section. 
 
 ###Conclusion
 
-Once nightsAwayForms has written all the documents to the desired 
+Once nightsawayforms has written all the documents to the desired 
 directory, you're free to edit them with a word processor or spreadsheet 
 software. When you're happy, you can distribute them as appropriate. 
 
@@ -202,7 +206,7 @@ Finally, enjoy your camping trip!
 
 ##Private data
 
-nightsAwayForms is designed to be a stand-alone application. It doesn't 
+nightsawayforms is designed to be a stand-alone application. It doesn't 
 transmit any of the data it collects. After it completes a run, data 
 collected internally is dropped. 
 
@@ -215,7 +219,7 @@ as described in the advanced usage section.
 
 ##Advanced usage
 
-nightsAwayForms has been designed to be easy and intuitive to use out 
+nightsawayforms has been designed to be easy and intuitive to use out 
 of the box. For most situations, this will be all that's needed. 
 However, the app has a number of advanced features that can be used to 
 expand its functionality. 
@@ -229,7 +233,7 @@ The app has several command line options. Use:
 * "-d" or "--default" to restore the settings files to defaults 
 * "-b" or "--blank" to generate a blank document with a camp header 
 
-Not entering any options will run nightsAwayForms normally, as 
+Not entering any options will run nightsawayforms normally, as 
 described in the getting started section. 
 
 ###Custom settings
@@ -350,7 +354,7 @@ variable between camps and so need user input.
 
 ##Libraries used
 
-nightsAwayForms is written in python 3.6 and makes use of several 
+nightsawayforms is written in python 3.6 and makes use of several 
 libraries. These are: 
 * argparse
 * datetime
