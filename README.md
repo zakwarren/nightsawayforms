@@ -5,25 +5,29 @@
 Are you a Scout Leader who's tired of all the paperwork required 
 for a nights away event? Then this is the app for you! 
 
-nightsAwayForms takes all the boring, repetitive tasks and automates 
+nightsawayforms takes all the boring, repetitive tasks and automates 
 them for you. It asks a set of simple questions and uses your answers 
 to fill in the details. 
 
-Use nightsAwayForms as part of your camp planning to take the pain away 
+Use nightsawayforms as part of your camp planning to take the pain away 
 and let you focus on the fun. 
+
+This is not an official Scout Association product. We're just keen 
+Scout Leaders who wanted to automate the paperwork process when 
+organising nights away events. 
 
 Detailed documentation is in the "docs" directory.
 
 ##Quick start
 -----------
 
-1. Run nightsAwayForms to begin. 
+1. Run nightsawayforms to begin. 
 
 2. It will ask you a series of questions. It will offer to store group 
    details in a config file in the config directory to save time in 
    future uses. 
 
-3. The first time it runs, nightsAwayForms will write default settings 
+3. The first time it runs, nightsawayforms will write default settings 
    to the config directory. These are: 
    - equipment.json for group equipment
    - kitList.json for personal kit lists
@@ -47,13 +51,9 @@ Based on the user's input, this app will generate a:
    - kit list to issue to young people
    - risk assessment
    - group equipment list (request form)
+   - health and emergency contact form 
 Currently, it can't generate a nights away notification (NAN) form. If there is 
 demand, we'll try to include this in a future version. 
-
-It also doesn't generate a health and emergency contact details form to 
-give to parents to complete. This is because most Scout Groups we've met 
-seem to use Online Scout Manager (OSM) or Google Forms for this, which is 
-much easier than paper forms! 
 
 ## Contributing
 --------------

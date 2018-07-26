@@ -1,5 +1,18 @@
-import os, platform, argparse
-import campDeets, configuration, defaults, equipment, header, kitlist, menu, programme, riskassessment
+import os
+import platform
+import argparse
+
+# import nightsawayforms code
+import campdeets
+import configuration
+import defaults
+import equipment
+import header
+import health
+import kitlist
+import menu
+import programme
+import riskassessment
 
 
 def set_up():
@@ -39,11 +52,7 @@ def camp_directory():
         elif not os.path.exists(directory):
             os.makedirs(directory)
         
-        # set up path
-        if directory != "" and not directory.endswith("/"):
-            directory = directory + "/"
-
-        return directory
+        return os.path.join(directory, '')
     
     except:
         print("Failed to create directory:", directory)
@@ -70,11 +79,11 @@ def ops(config):
 
     # get required data
     if config == "ignore":
-        myGroup = campDeets.get_group()
+        myGroup = campdeets.get_group()
     else:
         myGroup = configuration.config_reader()
-    event = campDeets.get_camp()
-    leader = campDeets.get_leader()
+    event = campdeets.get_camp()
+    leader = campdeets.get_leader()
     print("")
     directory = camp_directory()
     print("")
@@ -105,9 +114,15 @@ def ops(config):
     riskassessment.risk_assessment(doc, docName, directory, event)
     print("")
 
+    # write health and emergency contact form if required
+    hf = input("Do you want to create a health and emergency contact form (y/n)? ")
+    if hf == 'y':
+        doc, docName = header.word_heading(myGroup, event)
+        health.health_and_emergency(doc, docName, directory, event)
+    print("")
+
     print("-" * 40)
     print("Don't forget to fill in and submit a Nights Away Notification (NAN) form!")
-    print("Don't forget to collect health and emergency contact details!")
     print("-" * 40, end="\n\n")
     print("Have a good camp!")
 
@@ -131,7 +146,7 @@ def main():
 
     # set up a new Scout Group configuration
     if args.config:
-        myGroup = campDeets.get_group()
+        myGroup = campdeets.get_group()
         configuration.config_writer(myGroup)
     
     # ignore any existing Scout Group configurations
@@ -146,10 +161,10 @@ def main():
     elif args.blank:
         # get required data
         if args.ignore:
-            myGroup = campDeets.get_group()
+            myGroup = campdeets.get_group()
         else:
             myGroup = configuration.config_reader()
-        event = campDeets.get_camp()
+        event = campdeets.get_camp()
         print("")
         directory = camp_directory()
         print("")

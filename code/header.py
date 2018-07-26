@@ -1,4 +1,6 @@
-import docx, openpyxl, PIL
+import docx
+import openpyxl
+import PIL
 from PIL import Image
 
 

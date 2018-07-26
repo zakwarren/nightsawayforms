@@ -1,5 +1,9 @@
 import docx
-import campdeets, configuration, nightsawayforms
+
+# import nightsawayforms codelocal files
+import campdeets
+import configuration
+import nightsawayforms
 
 
 def nan_form(directory, leader, myGroup, event):

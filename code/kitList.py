@@ -1,4 +1,5 @@
-import docx, json
+import docx
+import json
 import header
 
 

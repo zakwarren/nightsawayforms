@@ -74,15 +74,15 @@ class campDeets:
 
 class campLeader():
     """Holds the camp leader's details"""
-    def __init__(self, name, position): # memberNo, telephone, email
+    def __init__(self, name, position, memberNo, telephone, email):
         # leader identifiers
         self.name = name
         self.position = position
-        #self.memberNo = str(memberNo)
+        self.memberNo = str(memberNo)
 
         # contact details
-        #self.telephone = str(telephone)
-        #self.email = email
+        self.telephone = str(telephone)
+        self.email = email
     
     def __str__(self):
         return "Camp leader: " + self.name
@@ -158,15 +158,15 @@ def get_leader():
     # get leader identfiers
     name = input("What's the camp leader's name? ")
     position = input("What's the camp leader's position (e.g. SL, ASL)? ")
-    #memberNo = input("What's the camp leader's Scout membership number? ")
+    memberNo = input("What's the camp leader's Scout membership number? ")
 
     # get leader contact details
-    #telephone = input("What's the camp leader's telephone number? ")
-    #email = input("What's the camp leader's email address? ")
+    telephone = input("What's the camp leader's telephone number? ")
+    email = input("What's the camp leader's email address? ")
 
     # create leader object
     print("")
-    leader = campLeader(name, position) # memberNo, telephone, email
+    leader = campLeader(name, position, memberNo, telephone, email)
     return leader
 
 

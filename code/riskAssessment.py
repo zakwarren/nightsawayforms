@@ -1,4 +1,5 @@
-import docx, json
+import docx
+import json
 
 
 def risk_assessment(doc, docName, directory, event):
@@ -67,8 +68,8 @@ def risk_assessment(doc, docName, directory, event):
                 # check mitigation for dynamic components
                 mitigation = values[assessment]['mitigation']
                 if "[XXX]" in mitigation:
-                    print("User input required for risk assessment:\n")
-                    print(key.capitalize() + ": " + mitigation, end="\n\n")
+                    print("User input required for risk assessment: " + key.capitalize() + "\n")
+                    print(mitigation, end="\n\n")
                     lines = []
                     i = 0
                     print("Fill in the details to replace [XXX] then press enter. Leave the line blank to finish entering lines.")
@@ -87,7 +88,7 @@ def risk_assessment(doc, docName, directory, event):
                 # check contingency for dynamic components
                 contingency = values[assessment]['contingency']
                 if "[XXX]" in contingency:
-                    print("User input required for risk assessment:\n")
+                    print("User input required for risk assessment: " + key.capitalize() + "\n")
                     print(contingency, end="\n\n")
                     lines = []
                     i = 0

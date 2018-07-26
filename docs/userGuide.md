@@ -14,6 +14,10 @@ meetings with their leader team and have all the answers. Others like
 to use it as a prompt during those meetings. Whichever works for you, 
 use nightsawayforms to take the pain away and let you focus on the fun. 
 
+This is not an official Scout Association product. We're just keen 
+Scout Leaders who wanted to automate the paperwork process when 
+organising nights away events. 
+
 ##Getting started
 
 Run nightsawayforms to begin. This will open a clear terminal window 
@@ -29,13 +33,9 @@ activity. Based on the user's input, this app will generate a:
 * kit list to issue to young people
 * risk assessment
 * group equipment list (request form)
+* health and emergency contact form 
 Currently, it can't generate a nights away notification (NAN) form. If 
 there is demand, we'll try to include this in a future version. 
-
-It also doesn't generate a health and emergency contact details form 
-to give to parents to complete. This is because most Scout Groups 
-we've met seem to use Online Scout Manager (OSM) or Google Forms for 
-this, which is much easier than paper forms! 
 
 ###First run
 
@@ -91,7 +91,7 @@ document, saved in the specified directory.
 
 ###Menu
 
-The menu is only generated if say "y" when nightsawayforms asks if 
+The menu is only generated if you say "y" when nightsawayforms asks if 
 you will be providing catering. Otherwise it assumes you are relying 
 on an alternate provision, such as if the site provides meals. 
 
@@ -186,6 +186,17 @@ nightsawayforms comes with a default equipment JSON file, which it
 deploys on startup if the file doesn't already exist. This can be 
 edited with your own categories and equipment. Details on this, and 
 can be found under the advanced usage section. 
+
+###Health and emergency contact form
+The health and emergency contact form is only generated if you say "y" 
+when nightsawayforms asks if you require one. Otherwise it assumes you 
+have an alternative method. Many Scout Groups we've met seem to use 
+Online Scout Manager (OSM) or Google Forms for this, which is much 
+easier than paper forms! 
+
+If you choose to generate a health form, it will ask when you'd like 
+it submitted by. The rest it creates based on the Scout Association 
+template from their nights away guidance. 
 
 ###Conclusion
 

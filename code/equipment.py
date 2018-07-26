@@ -1,4 +1,6 @@
-import openpyxl, datetime, json
+import openpyxl
+import datetime
+import json
 
 
 def equipment(wb, ws, bookName, directory, leader, myGroup, event):
