@@ -11,10 +11,9 @@ def nan_form(directory, event):
         nan = 'NAN form - ' + event.camp + ' ' + event.campYear + '.doc'
         print("Copying:", nan)
         shutil.copyfile('config/nanFormTemplate.doc', directory + nan)
+        print("")
     except:
-        print("Failed to copy " + nan)
+        print("Failed to copy " + nan, end="\n\n")
 
-    print("-" * 40)
     print("Don't forget to fill in and submit the Nights Away Notification (NAN) form!")
-    print("-" * 40, end="\n\n")
 

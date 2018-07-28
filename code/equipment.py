@@ -144,7 +144,6 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
                     i += 1
     
     # adds table border to final row
-    i += 1
     for col in range(1, 12):
         ws.cell(column=col, row=i).border = upBorder
     
