@@ -1,6 +1,7 @@
 import os
 import platform
 import argparse
+import urllib.request
 
 # import nightsawayforms code
 import campdeets
@@ -13,12 +14,13 @@ import kitlist
 import menu
 import programme
 import riskassessment
+import nanform
 
 
 def set_up():
     """Check local environment and set up as necessary"""
+    # check if config directory exists and, if not, create it
     try:
-        # check if config directory exists and, if not, create it
         directory = "config"
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -38,6 +40,19 @@ def set_up():
     
     except:
         print("Failed to search config directory")
+    
+    # check if NAN form template exists and, if not, create it
+    try:
+        if not os.path.isfile('config/nanFormTemplate.doc'):
+            url = r"https://members.scouts.org.uk/documents/activities/Form%20NAN_Feb%202015%20Fix.doc"
+
+            # download the NAN form and save it to the config directory
+            with urllib.request.urlopen(url) as response, open("config/nanFormTemplate.doc", 'wb') as outFile:
+                data = response.read()
+                outFile.write(data)
+            
+    except:
+        print("Failed to download NAN form template")
 
 
 def camp_directory():
@@ -121,10 +136,13 @@ def ops(config):
         health.health_and_emergency(doc, docName, directory, event)
     print("")
 
+    # copy blank NAN form into the camp directory
+    nanform.nan_form(directory, event)
+    print("")
+
     print("-" * 40)
-    print("Don't forget to fill in and submit a Nights Away Notification (NAN) form!")
-    print("-" * 40, end="\n\n")
     print("Have a good camp!")
+    print("-" * 40, end="\n\n")
 
 
 def main():

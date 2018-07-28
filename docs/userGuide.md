@@ -1,4 +1,4 @@
-#Nights Away Forms Generator
+# Nights Away Forms Generator
 
 Welcome to the user guide for the Nights Away Forms Generator! This 
 was designed and developed by Scout Leaders for Scout Leaders (and 
@@ -18,7 +18,9 @@ This is not an official Scout Association product. We're just keen
 Scout Leaders who wanted to automate the paperwork process when 
 organising nights away events. 
 
-##Getting started
+----------------------
+
+## Getting started
 
 Run nightsawayforms to begin. This will open a clear terminal window 
 and run a few checks on its local environment. It will then ask you a 
@@ -34,16 +36,20 @@ activity. Based on the user's input, this app will generate a:
 * risk assessment
 * group equipment list (request form)
 * health and emergency contact form 
-Currently, it can't generate a nights away notification (NAN) form. If 
-there is demand, we'll try to include this in a future version. 
 
-###First run
+A blank Nights Away Notification (NAN) form is also deployed to the 
+camp directory, so it's easier for you to fill in and send off. 
+
+### First run
 
 The first time it runs, nightsawayforms will write default settings to 
 the config directory. These are: 
 * equipment.json for group equipment
 * kitList.json for personal kit lists
 * risks.json for risk assessments
+
+It will also download a blank NAN form from the Scout Association website 
+to the config directory as a template for ease of working. 
 
 It will then ask you a number of questions about your Scout Group and 
 section. Your answers will be stored in the config directory, in 
@@ -53,7 +59,7 @@ the headers of your camp documents.
 A resized logo will also be stored in the config directory for use by 
 headers. 
 
-###Camp-specific questions
+### Camp-specific questions
 
 Every time nightsawayforms runs, it will ask you a series of 
 camp-specific questions. These cover the name of the camp, where it 
@@ -73,7 +79,7 @@ Typing "C:\Users\PoignantWizard\Desktop\Summer camp" will place the
 forms in a folder called "Summer camp" on the desktop. If the folder 
 doesn't exist, nightsawayforms will attempt to create it first. 
 
-###Programme
+### Programme
 
 The programme uses the dates provided to pre-populate the days of the 
 week to a table. It then asks for the details of the programme. 
@@ -89,7 +95,7 @@ For example:
 These responses are pushed into a table and written out into a 
 document, saved in the specified directory. 
 
-###Menu
+### Menu
 
 The menu is only generated if you say "y" when nightsawayforms asks if 
 you will be providing catering. Otherwise it assumes you are relying 
@@ -111,7 +117,7 @@ For example:
 These responses are pushed into a table and written out into a 
 document, saved in the specified directory. 
 
-###Kit list
+### Kit list
 
 The kit list uses a JSON file to provide it with all the possible 
 options that could be included. These are grouped into several 
@@ -127,11 +133,11 @@ includes information for young people on what to wear afloat for
 activities like sailing. 
 
 nightsawayforms comes with a default kit list JSON file, which it 
-deploys on startup if the file doesn't already exist. This can be 
+deploys on start-up if the file doesn't already exist. This can be 
 edited with your own categories and kit list. Details on this can 
 be found under the advanced usage section. 
 
-###Risk assessment
+### Risk assessment
 
 The risk assessment uses a JSON file to provide it with all the 
 possible options that could be included. These are grouped into 
@@ -155,12 +161,12 @@ This gives you the opportunity to find out the details of the
 nearest hospital to your camp and add it in. 
 
 nightsawayforms comes with a default risk assessment JSON file, 
-which it deploys on startup if the file doesn't already exist. 
+which it deploys on start-up if the file doesn't already exist. 
 This can be edited with your own categories and risk assessments. 
 Details on this, and adding your own dynamic fields, can be found 
 under the advanced usage section. 
 
-###Group equipment list
+### Group equipment list
 
 The equipment list generates a spreadsheet with a list of group 
 equipment. This is produced as a request form as local Scout Groups 
@@ -183,11 +189,11 @@ catering category, asking you what equipment you wish to take and how
 much of each. 
 
 nightsawayforms comes with a default equipment JSON file, which it 
-deploys on startup if the file doesn't already exist. This can be 
+deploys on start-up if the file doesn't already exist. This can be 
 edited with your own categories and equipment. Details on this, and 
 can be found under the advanced usage section. 
 
-###Health and emergency contact form
+### Health and emergency contact form
 The health and emergency contact form is only generated if you say "y" 
 when nightsawayforms asks if you require one. Otherwise it assumes you 
 have an alternative method. Many Scout Groups we've met seem to use 
@@ -198,7 +204,20 @@ If you choose to generate a health form, it will ask when you'd like
 it submitted by. The rest it creates based on the Scout Association 
 template from their nights away guidance. 
 
-###Conclusion
+### Nights Away Notification (NAN) form
+The current NAN form is a .doc file, while nightsawayforms is only 
+capable of writing to .docx forms. However, it's still useful to have 
+a blank form ready and waiting in your camp directory. Therefore, 
+nightsawayforms will copy the blank form from the config directory 
+to the camp directory, renaming it for the camp. 
+
+If you'd like to pre-fill some of the fields in the NAN form, you can 
+open the template file saved in the config directory and edit it without 
+effecting the functionality of nightsawayforms. For example, if you always 
+run camps, you may wish to add in your details to the camp leader section. 
+This way they're copied over for each camp you set up with nightsawayforms. 
+
+### Conclusion
 
 Once nightsawayforms has written all the documents to the desired 
 directory, you're free to edit them with a word processor or spreadsheet 
@@ -215,7 +234,7 @@ try to include the automatic generation of NAN forms in a future version.
 
 Finally, enjoy your camping trip! 
 
-##Private data
+## Private data
 
 nightsawayforms is designed to be a stand-alone application. It doesn't 
 transmit any of the data it collects. After it completes a run, data 
@@ -228,14 +247,16 @@ This includes group data to provide convenience across multiple
 sessions. It can also include any data you add to the settings files 
 as described in the advanced usage section. 
 
-##Advanced usage
+----------------------
+
+## Advanced usage
 
 nightsawayforms has been designed to be easy and intuitive to use out 
 of the box. For most situations, this will be all that's needed. 
 However, the app has a number of advanced features that can be used to 
 expand its functionality. 
 
-###Command line options
+### Command line options
 
 The app has several command line options. Use: 
 * "-c" or "--config" to set up a new Scout Group configuration 
@@ -247,7 +268,7 @@ The app has several command line options. Use:
 Not entering any options will run nightsawayforms normally, as 
 described in the getting started section. 
 
-###Custom settings
+### Custom settings
 
 There are three settings files, which are stored in the config 
 directory, which is created in the same directory as the app is run. 
@@ -264,7 +285,7 @@ As long as the fundamental structure of each one is maintained,
 you can be confident in adding data, or changing the existing 
 data, without fear of causing an error in the app. 
 
-####equipment.json
+#### equipment.json
 
 The top level key is "equipment" and needs to be maintained. The 
 categories below this can safely be added to, changed, or removed  
@@ -290,7 +311,7 @@ automatically accepted as relevant:
 You can safely add, change, or remove items from the list beneath 
 any of the categories. 
 
-####kitList.json
+#### kitList.json
 
 The top level key is "kit" and needs to be maintained. The categories 
 below this can safely be added to, changed, or removed as needed to 
@@ -327,7 +348,7 @@ app won't write the paragraphs that include these details.
 You can safely add, change, or remove items from the list beneath 
 any of the categories. 
 
-####risks.json 
+#### risks.json 
 
 The top level key is "risks" and needs to be maintained. The categories 
 below this can safely be added to, changed, or removed as needed to 
@@ -363,7 +384,7 @@ user input. The user data is used to replace the [XXX].
 You can add a [XXX] to any mitigation or contingency if these are 
 variable between camps and so need user input. 
 
-##Libraries used
+## Libraries used
 
 nightsawayforms is written in python 3.6 and makes use of several 
 libraries. These are: 
@@ -375,3 +396,5 @@ libraries. These are:
 * pillow
 * platform
 * python-docx
+* shutil
+* urllib.request 

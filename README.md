@@ -1,6 +1,5 @@
-===========================
-#Nights Away Forms Generator
-===========================
+# Nights Away Forms Generator
+----------------------
 
 Are you a Scout Leader who's tired of all the paperwork required 
 for a nights away event? Then this is the app for you! 
@@ -18,7 +17,7 @@ organising nights away events.
 
 Detailed documentation is in the "docs" directory.
 
-##Quick start
+## Quick start
 -----------
 
 1. Run nightsawayforms to begin. 
@@ -32,7 +31,9 @@ Detailed documentation is in the "docs" directory.
    - equipment.json for group equipment
    - kitList.json for personal kit lists
    - risks.json for risk assessments
-   A resized logo will also be stored here for use by headers. 
+   A copy of the Nights Away Notification (NAN) form will be copied 
+   here from the Scout Association website for local working. A resized 
+   logo will also be stored here for use by headers. 
 
 4. Advanced users may wish to edit these settings files. You can do this 
    directly with any programme capable of editing json data. See the 
@@ -40,7 +41,7 @@ Detailed documentation is in the "docs" directory.
 
 5. Enjoy your camping trips! 
 
-##Included forms
+## Included forms
 --------------
 
 nightAwayForms generates most of the suite of paperwork required to complete 
@@ -52,8 +53,8 @@ Based on the user's input, this app will generate a:
    - risk assessment
    - group equipment list (request form)
    - health and emergency contact form 
-Currently, it can't generate a nights away notification (NAN) form. If there is 
-demand, we'll try to include this in a future version. 
+A blank Nights Away Notification (NAN) form is also deployed to the camp 
+directory, so it's easier for you to fill in and send off. 
 
 ## Contributing
 --------------
