@@ -1,5 +1,4 @@
 # Nights Away Forms Generator
-----------------------
 
 Are you a Scout Leader who's tired of all the paperwork required 
 for a nights away event? Then this is the app for you! 
@@ -18,7 +17,6 @@ organising nights away events.
 Detailed documentation is in the "docs" directory.
 
 ## Quick start
------------
 
 1. Run nightsawayforms to begin. 
 
@@ -42,7 +40,6 @@ Detailed documentation is in the "docs" directory.
 5. Enjoy your camping trips! 
 
 ## Included forms
---------------
 
 nightAwayForms generates most of the suite of paperwork required to complete 
 a Scout Association nights away permit and for running any nights away activity. 
@@ -57,19 +54,16 @@ A blank Nights Away Notification (NAN) form is also deployed to the camp
 directory, so it's easier for you to fill in and send off. 
 
 ## Contributing
---------------
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct. 
 
 This app is written in python 3.6. 
 
 ## Authors
---------------
 
 * **PoignantWizard** - *Initial work* 
 
 ## License
---------------
 
 This project is licensed under the 3-Clause BSD License - see the [LICENSE.md](LICENSE.md) file 
 for details. 
