@@ -29,6 +29,7 @@ Detailed documentation is in the "docs" directory.
    - equipment.json for group equipment
    - kitList.json for personal kit lists
    - risks.json for risk assessments
+ 
    A copy of the Nights Away Notification (NAN) form will be copied 
    here from the Scout Association website for local working. A resized 
    logo will also be stored here for use by headers. 
@@ -50,6 +51,7 @@ Based on the user's input, this app will generate a:
    - risk assessment
    - group equipment list (request form)
    - health and emergency contact form 
+
 A blank Nights Away Notification (NAN) form is also deployed to the camp 
 directory, so it's easier for you to fill in and send off. 
 

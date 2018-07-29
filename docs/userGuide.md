@@ -223,15 +223,6 @@ Once nightsawayforms has written all the documents to the desired
 directory, you're free to edit them with a word processor or spreadsheet 
 software. When you're happy, you can distribute them as appropriate. 
 
-Don't forget to ask parents for health and emergency contact information 
-for their young people. This isn't currently included because most Scout 
-Groups we've met seem to use Online Scout Manager (OSM) or Google Forms 
-for this, which is much easier than paper forms! 
-
-You also need to remember to complete a Nights Away Notification (NAN) 
-form and send it to the relevant commissioner. If there is demand, we'll 
-try to include the automatic generation of NAN forms in a future version. 
-
 Finally, enjoy your camping trip! 
 
 ## Private data
