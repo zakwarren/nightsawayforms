@@ -1,4 +1,5 @@
 import docx
+import header
 
 
 def health_and_emergency(doc, docName, directory, event):
@@ -9,6 +10,29 @@ def health_and_emergency(doc, docName, directory, event):
     dateBy = input("When does the health form have to be returned by? ")
     blurb = "Please fill in this health and emergency contact information form and return it to a leader by "
     doc.add_paragraph(blurb + str(dateBy) + ".")
+    # data protection statement
+    p = doc.add_paragraph()
+    runner = p.add_run("Data protection")
+    runner.bold = True
+    dataProtection = "This form is used to collect information about your young person " \
+                    + "for the purpose of the event named below, this is to be used by the " \
+                    + "Section Leaders only. As part of this form we collect personal data " \
+                    + "about your young person, this detail is required so that we can " \
+                    + "register them for the event. This form also collects sensitive " \
+                    + "(special category) data about your young person, this detail is " \
+                    + "required so that we can offer additional support if required and keep " \
+                    + "your young person safe whilst in our care. We may share your personal " \
+                    + "data in this form with third parties, we do this for event registration. " \
+                    + "These third parties are used on the basis that they align with our data " \
+                    + "privacy policies. We take your personal data privacy seriously. The data " \
+                    + "you provide to us is securely stored (based on local arrangements) and " \
+                    + "will be kept for 2 months after the event for any queries that arise " \
+                    + "before being securely destroyed. For further detail please visit our " \
+                    + "Data Protection Policy "
+    r = p.add_run(dataProtection)
+    web = "https://scouts.org.uk/media/927472/SCOUTS-data-protection.pdf"
+    header.add_hyperlink(p, "here", web)
+    p.add_run(". ")
 
     # personal information section
     p = doc.add_paragraph()
@@ -85,4 +109,3 @@ def health_and_emergency(doc, docName, directory, event):
         doc.save(directory + docName)
     except:
         print("Failed to save " + docName)
-

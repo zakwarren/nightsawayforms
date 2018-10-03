@@ -16,4 +16,3 @@ def nan_form(directory, event):
         print("Failed to copy " + nan, end="\n\n")
 
     print("Don't forget to fill in and submit the Nights Away Notification (NAN) form!")
-

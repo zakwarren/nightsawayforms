@@ -28,7 +28,7 @@ def set_up():
     except:
         print("Failed to create config directory")
         quit()
-    
+
     # check if data files are present and, if not, write defaults
     try:
         if not os.path.isfile('config/equipment.json'):
@@ -37,20 +37,20 @@ def set_up():
             defaults.default_kit()
         if not os.path.isfile('config/risks.json'):
             defaults.default_risk()
-    
+
     except:
         print("Failed to search config directory")
-    
+
     # check if NAN form template exists and, if not, create it
     try:
         if not os.path.isfile('config/nanFormTemplate.doc'):
-            url = r"https://members.scouts.org.uk/documents/activities/Form%20NAN_Feb%202015%20Fix.doc"
+            url = r"https://members.scouts.org.uk/documents/activities/NAN_form%20Sept%202018.doc"
 
             # download the NAN form and save it to the config directory
             with urllib.request.urlopen(url) as response, open("config/nanFormTemplate.doc", 'wb') as outFile:
                 data = response.read()
                 outFile.write(data)
-            
+  
     except:
         print("Failed to download NAN form template")
 
@@ -66,9 +66,9 @@ def camp_directory():
         # else check if camp directory exists and, if not, create it
         elif not os.path.exists(directory):
             os.makedirs(directory)
-        
+
         return os.path.join(directory, '')
-    
+
     except:
         print("Failed to create directory:", directory)
 
@@ -77,7 +77,7 @@ def blank_doc(directory, myGroup, event):
     """Produces a blank document using the standard header for the camp"""
     print("Generating blank document...")
     doc, docName = header.word_heading(myGroup, event)
-    
+
     # save document
     try:
         docName = 'Blank document' + docName
@@ -123,7 +123,7 @@ def ops(config):
         doc, docName = header.word_heading(myGroup, event)
         menu.menu(doc, docName, directory, event)
         print("")
-    
+
     # write risk assessment
     doc, docName = header.word_heading(myGroup, event)
     riskassessment.risk_assessment(doc, docName, directory, event)
@@ -166,15 +166,15 @@ def main():
     if args.config:
         myGroup = campdeets.get_group()
         configuration.config_writer(myGroup)
-    
+
     # ignore any existing Scout Group configurations
     elif args.ignore:
         ops("ignore")
-    
+
     # restore default settings files
     elif args.default:
         defaults.restore_defaults()
-    
+
     # generate a blank document with a camp header
     elif args.blank:
         # get required data
@@ -188,7 +188,7 @@ def main():
         print("")
         # produce blank document
         blank_doc(directory, myGroup, event)
-    
+
     # run normal nights away form generator
     else:
         ops("include")
