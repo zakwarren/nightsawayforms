@@ -7,9 +7,9 @@ def nan_form(directory, event):
 
     # copy template file from config to camp directory
     try:
-        nan = 'NAN form - ' + event.camp + ' ' + event.campYear + '.doc'
+        nan = 'NAN form - ' + event.camp + ' ' + event.campYear + '.docx'
         print("Copying:", nan)
-        shutil.copyfile('config/nanFormTemplate.doc', directory + nan)
+        shutil.copyfile('config/nanFormTemplate.docx', directory + nan)
         print("")
     except:
         print("Failed to copy " + nan, end="\n\n")
