@@ -12,10 +12,10 @@ def config_reader():
         try:
             with open('config/config.json') as infile:
                 c = json.load(infile)
-        
+
             # extract data
             config = c['config']
-            
+
             group = config['group']
             logo = config['logo']
             established = config['established']
@@ -24,13 +24,21 @@ def config_reader():
             district = config['district']
             section = config['section']
 
-            myGroup = campdeets.groupDeets(group, logo, established, charity, rnNumber, district, section)
+            myGroup = campdeets.groupDeets(
+                group,
+                logo,
+                established,
+                charity,
+                rnNumber,
+                district,
+                section
+            )
             return myGroup
-        
+
         except:
             print("Failed to read config file", end="\n\n")
             new = input("Would you like to save Scout Group details to a new file (y/n)? ")
-    
+
     else:
         print("Failed to find config file", end="\n\n")
         new = input("Would you like to save Scout Group details to file (y/n)? ")
@@ -72,7 +80,6 @@ def config_writer(myGroup):
         with open('config/config.json', 'w') as outfile:
             json.dump(config, outfile)
         print("Configuration saved successfully!", end="\n\n")
-    
+
     except:
         print("Failed to write Scout Group configuration to file")
-

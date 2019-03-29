@@ -1,5 +1,5 @@
-import docx
 import json
+import docx
 
 
 def risk_assessment(doc, docName, directory, event):
@@ -7,7 +7,7 @@ def risk_assessment(doc, docName, directory, event):
     print("Generating risk assessment...")
     # add heading
     doc.add_heading('Risk assessment', 4)
- 
+
     # add main table for the risk assessment
     table = doc.add_table(rows=1, cols=3)
     table.style = 'Table Grid'
@@ -44,7 +44,7 @@ def risk_assessment(doc, docName, directory, event):
         # add predefined categories as applicable
         if event.nightsAway > 0 and key in preDefined:
             include = 'y'
-        
+
         # manage special categories
         elif key == "catering" and event.catering:
             include = 'y'
@@ -52,11 +52,11 @@ def risk_assessment(doc, docName, directory, event):
             include = 'y'
         elif key == "water activities" and event.waterActivities:
             include = 'y'
-        
+
         # check whether to add each specific section
         else:
             include = input("Include " + key + " section (y/n)? ")
-        
+
         # for each section to include add a row for assessment
         if include == 'y':
             for assessment in values:
@@ -72,7 +72,8 @@ def risk_assessment(doc, docName, directory, event):
                     print(mitigation, end="\n\n")
                     lines = []
                     i = 0
-                    print("Fill in the details to replace [XXX] then press enter. Leave the line blank to finish entering lines.")
+                    print("Fill in the details to replace [XXX] then press enter. " \
+                        + "Leave the line blank to finish entering lines.")
                     while True:
                         i += 1
                         line = input("Enter details: ")
@@ -92,7 +93,8 @@ def risk_assessment(doc, docName, directory, event):
                     print(contingency, end="\n\n")
                     lines = []
                     i = 0
-                    print("Fill in the details to replace [XXX] then press enter. Leave the line blank to finish entering lines.")
+                    print("Fill in the details to replace [XXX] then press enter. " \
+                        + "Leave the line blank to finish entering lines.")
                     while True:
                         i += 1
                         line = input("Enter details: ")
@@ -113,4 +115,3 @@ def risk_assessment(doc, docName, directory, event):
         doc.save(directory + docName)
     except:
         print("Failed to save " + docName)
-

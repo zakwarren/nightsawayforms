@@ -1,6 +1,6 @@
-import openpyxl
 import datetime
 import json
+import openpyxl
 
 
 def equipment(wb, ws, bookName, directory, leader, myGroup, event):
@@ -8,10 +8,10 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
     print("Generating equipment request form...")
 
     # generate border styles
-    upBorder = openpyxl.styles.borders.Border(top = openpyxl.styles.borders.Side(style='thin'))
-    downBorder = openpyxl.styles.borders.Border(bottom = openpyxl.styles.borders.Side(style='thin'))
-    leftBorder = openpyxl.styles.borders.Border(left = openpyxl.styles.borders.Side(style='thin'))
-    # rightBorder = openpyxl.styles.borders.Border(right = openpyxl.styles.borders.Side(style='thin'))
+    upBorder = openpyxl.styles.borders.Border(top=openpyxl.styles.borders.Side(style='thin'))
+    downBorder = openpyxl.styles.borders.Border(bottom=openpyxl.styles.borders.Side(style='thin'))
+    leftBorder = openpyxl.styles.borders.Border(left=openpyxl.styles.borders.Side(style='thin'))
+    # rightBorder = openpyxl.styles.borders.Border(right=openpyxl.styles.borders.Side(style='thin'))
 
     # create text wrap style
     wrapText = openpyxl.styles.Alignment(wrap_text=True)
@@ -116,7 +116,7 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
         # add predefined categories as applicable
         if event.nightsAway > 0 and key in preDefined:
             include = 'y'
-        
+
         # manage special categories
         elif key == "catering" and event.catering:
             include = 'y'
@@ -124,11 +124,11 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
             include = 'y'
         elif key == "water activities" and event.waterActivities:
             include = 'y'
-        
+
         # check whether to add each specific section
         else:
             include = input("Include " + key + " section (y/n)? ")
-        
+
         # for each section to include, check through equipment and amount
         if include == 'y':
             for equip in values:
@@ -142,14 +142,15 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
                         ws.cell(column=col, row=i).border = upBorder
                     ws.cell(column=12, row=i).border = leftBorder
                     i += 1
-    
+
     # adds table border to final row
     for col in range(1, 12):
         ws.cell(column=col, row=i).border = upBorder
-    
+
     # add closer
     i += 1
-    ws.cell(column=1, row=i).value = "Equipment above has been returned to the store in a clean and dry condition. All defects have been reported."
+    ws.cell(column=1, row=i).value = "Equipment above has been returned to the store " \
+        + "in a clean and dry condition. All defects have been reported."
 
     # save workbook
     try:
@@ -158,4 +159,3 @@ def equipment(wb, ws, bookName, directory, leader, myGroup, event):
         wb.save(directory + bookName)
     except:
         print("Failed to save " + bookName)
-

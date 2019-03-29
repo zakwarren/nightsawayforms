@@ -62,7 +62,7 @@ def menu(doc, docName, directory, event):
             a += 1
         # iterate through loop
         i += 1
-    
+
     # save document
     try:
         docName = 'Menu' + docName
@@ -70,4 +70,3 @@ def menu(doc, docName, directory, event):
         doc.save(directory + docName)
     except:
         print("Failed to save " + docName)
-

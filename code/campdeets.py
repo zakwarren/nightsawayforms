@@ -1,6 +1,7 @@
 import datetime
 
-class campDeets:
+
+class CampDeets:
     """Holds the camp details, calculating a range of data from the initialisation parameters"""
     def __init__(self, camp, location, startDate, endDate, catering, sharps, waterActivities):
         # camp basics
@@ -53,7 +54,8 @@ class campDeets:
         startSuffix = self.day_suffix(startDay)
         endSuffix = self.day_suffix(endDay)
 
-        dateRange = str(startDay) + startSuffix + " to " + str(endDay) + endSuffix + ' ' + endMonth + ' ' + str(endYear)
+        dateRange = str(startDay) + startSuffix + " to " \
+            + str(endDay) + endSuffix + ' ' + endMonth + ' ' + str(endYear)
         return dateRange
 
 
@@ -78,7 +80,7 @@ class campLeader():
         # leader identifiers
         self.name = name
         self.position = position
-    
+
     def __str__(self):
         return "Camp leader: " + self.name
 
@@ -95,10 +97,10 @@ class groupDeets():
 
         # district details
         self.district = district
-        
+
         # section details
         self.section = section
-    
+
     def __str__(self):
         if self.rnNumber == 'na':
             rn = ''
@@ -142,7 +144,7 @@ def get_camp():
 
     # create camp details object
     print("")
-    event = campDeets(camp, location, startDate, endDate, catering, sharps, waterActivities)
+    event = CampDeets(camp, location, startDate, endDate, catering, sharps, waterActivities)
     return event
 
 
@@ -181,4 +183,3 @@ def get_group():
     print("")
     myGroup = groupDeets(group, logo, established, charity, rnNumber, district, section)
     return myGroup
-

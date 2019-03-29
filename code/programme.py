@@ -6,8 +6,10 @@ def programme(doc, docName, directory, event):
     print("Generating programme...")
     # add heading and blurb paragraph
     doc.add_heading('Programme', 4)
-    blurb1 = 'As with all Scouting plans, this programme is designed with a large degree of flexibility. '
-    blurb2 = 'Activities and timings are subject to change depending on weather, river conditions, how previous activities go, etc.'
+    blurb1 = 'As with all Scouting plans, ' \
+        + 'this programme is designed with a large degree of flexibility. '
+    blurb2 = 'Activities and timings are subject to change ' \
+        + 'depending on weather, river conditions, how previous activities go, etc.'
     doc.add_paragraph(blurb1 + blurb2)
 
     # add main table for the programme
@@ -65,4 +67,3 @@ def programme(doc, docName, directory, event):
         doc.save(directory + docName)
     except:
         print("Failed to save " + docName)
-

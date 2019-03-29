@@ -1,5 +1,5 @@
-import docx
 import json
+import docx
 import header
 
 
@@ -28,7 +28,7 @@ def kit_list(doc, docName, directory, event):
         # add predefined categories as applicable
         if event.nightsAway > 0 and key in preDefined:
             include = 'y'
-        
+
         # manage special categories
         elif key == "web":
             web = values[0]
@@ -38,11 +38,11 @@ def kit_list(doc, docName, directory, event):
             include = 'y'
         elif key == "water activities" and event.waterActivities:
             include = 'y'
-        
+
         # check whether to add each specific section
         else:
             include = input("Include " + key + " section (y/n)? ")
-        
+
         # for each section to include add a bullet point list of kit
         if include == 'y' and key != "exclude" and key != "web":
             for kit in values:
@@ -54,12 +54,14 @@ def kit_list(doc, docName, directory, event):
         excl = doc.add_paragraph()
         excl.add_run("IMPORTANT: Items such as ")
         excl.add_run(exclusions)
-        excl.add_run(" are NOT permitted on camp. They’re highly likely to get damaged in the camp environment.")
+        excl.add_run(" are NOT permitted on camp. " \
+            + "They’re highly likely to get damaged in the camp environment.")
 
     # add closing information paragraphs
     close = doc.add_paragraph()
     if web:
-        close.add_run("Guidance on kit (particularly if you intend to buy anything) can be found on the ")
+        close.add_run("Guidance on kit (particularly if you intend to buy anything) " \
+            + "can be found on the ")
         header.add_hyperlink(close, "camp kit page of the website", web)
         close.add_run(". ")
     close.add_run("Feel free to ask the leaders if you have any questions.")

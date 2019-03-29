@@ -49,7 +49,7 @@ def add_hyperlink(paragraph, text, url):
 
 def word_heading(myGroup, event):
     """Initialise a document and apply the header"""
-    # create document object 
+    # create document object
     doc = docx.Document()
 
     # create header table
@@ -62,10 +62,10 @@ def word_heading(myGroup, event):
     p.style = 'Title'
     r = p.add_run()
     r.add_text(myGroup.section)
-    
+
     # build sub title
     subTitle = event.camp + ' at ' + event.location + ', from ' + event.dateRange
-    # add subtitle 
+    # add subtitle
     p = cell1.add_paragraph()
     r = p.add_run()
     r.add_text(subTitle)
@@ -115,4 +115,3 @@ def excel_heading(myGroup, event):
     bookName = ' - ' + event.camp + ' ' + event.campYear + '.xlsx'
     #return workbook, worksheet, bookName
     return wb, ws, bookName
-

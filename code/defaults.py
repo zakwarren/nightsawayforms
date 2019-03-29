@@ -1,5 +1,6 @@
 import os
 
+
 def restore_defaults():
     """Restore default setting files"""
     try:
@@ -11,7 +12,7 @@ def restore_defaults():
     except:
         print("Failed to create config directory")
         quit()
-    
+
     # write new default settings files
     default_equip()
     default_kit()
@@ -130,10 +131,7 @@ def default_equip():
             "Coypus",
             "Bags of coypu crutches, bungs, bailers",
             "Picos",
-            "Pico masts",
-            "Pico rudders and tillers",
-            "Pico main sails",
-            "Pico jibs",
+            "Pico equipment and sails",
             "Wayfarers",
             "Wayfarer sails",
             "Drascombe",
@@ -311,4 +309,3 @@ def default_risk():
             outfile.write(risk)
     except:
         print("Failed to write default risk assessment data to config directory")
-
