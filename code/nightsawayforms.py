@@ -43,21 +43,23 @@ def set_up():
 
     # check if NAN form template exists and, if not, create it
     try:
-        if not os.path.isfile('config/nanFormTemplate.doc'):
-            url = r"https://members.scouts.org.uk/documents/activities/NAN_form%20Sept%202018.doc"
+        if not os.path.isfile('config/nanFormTemplate.docx'):
+            url = r"https://scouts.org.uk/media/981094/Form-NAN_Sept-2018.docx"
 
             # download the NAN form and save it to the config directory
-            with urllib.request.urlopen(url) as response, open("config/nanFormTemplate.doc", 'wb') as outFile:
+            with urllib.request.urlopen(url) as response, \
+                open("config/nanFormTemplate.docx", 'wb') as outFile:
                 data = response.read()
                 outFile.write(data)
-  
+
     except:
         print("Failed to download NAN form template")
 
 
 def camp_directory():
     """Check directory for camp forms and create as necessary"""
-    directory = input("What directory do you want to save the camp paperwork in? (Leave blank for this directory) ")
+    directory = input("What directory do you want to save the camp paperwork in?" \
+        " (Leave blank for this directory) ")
     try:
         # if nothing entered, set as blank string for this directory
         if not directory:
@@ -146,11 +148,36 @@ def ops(config):
 
 
 def main():
+    """
+    Main entry point to programme.
+    Captures command line arguments
+    and acts on primary decisions
+    """
     parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", help="set up a new Scout Group configuration", action="store_true")
-    parser.add_argument("-i", "--ignore", help="ignores existing configuration", action="store_true")
-    parser.add_argument("-d", "--default", help="restore settings files to default", action="store_true")
-    parser.add_argument("-b", "--blank", help="generate a blank document with a camp header", action="store_true")
+    parser.add_argument(
+        "-c",
+        "--config",
+        help="set up a new Scout Group configuration",
+        action="store_true"
+    )
+    parser.add_argument(
+        "-i",
+        "--ignore",
+        help="ignores existing configuration",
+        action="store_true"
+    )
+    parser.add_argument(
+        "-d",
+        "--default",
+        help="restore settings files to default",
+        action="store_true"
+    )
+    parser.add_argument(
+        "-b",
+        "--blank",
+        help="generate a blank document with a camp header",
+        action="store_true"
+    )
     args = parser.parse_args()
 
     # clear the terminal and show welcome screen
