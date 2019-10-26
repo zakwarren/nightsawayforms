@@ -2,5 +2,5 @@ et-xmlfile==1.0.1
 jdcal==1.4
 lxml==4.2.3
 openpyxl==2.5.4
-Pillow==5.2.0
+Pillow==6.2.0
 python-docx==0.8.6
